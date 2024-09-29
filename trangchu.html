@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Đỗ Đình Tuấn</title>
+    <style>
+      body {
+        background-color: #f0f8ff;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        width: 60%;
+        margin: auto;
+        padding: 10px;
+      }
+      header {
+        text-align: center;
+        background-color: #32cd32;
+        color: white;
+        padding: 15px 0;
+        border-radius: 8px;
+        margin-bottom: 20px;
+      }
+      .result {
+        background-color: #ffffff;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
+      .result h2 {
+        margin: 0;
+        font-size: 1.2em;
+      }
+      .footer {
+        text-align: center;
+        color: #555;
+        margin-top: 20px;
+        padding: 5px 0;
+        border-top: 1px solid #ddd;
+        font-size: 0.9em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Đỗ Đình Tuấn - DHTI15A1CL</h1>
+      </header>
+
+      <div class="result" style="border-left: 5px solid red">
+        <h2 style="color: red">Tổng = <span id="sum"></span></h2>
+      </div>
+
+      <div class="result" style="border-left: 5px solid yellow">
+        <h2 style="color: yellow">Hiệu = <span id="difference"></span></h2>
+      </div>
+
+      <div class="result" style="border-left: 5px solid deepskyblue">
+        <h2 style="color: deepskyblue">Thương = <span id="quotient"></span></h2>
+      </div>
+
+      <div class="result" style="border-left: 5px solid violet">
+        <h2>Tích = <span style="color: violet" id="product"></span></h2>
+      </div>
+
+      <div class="result" style="background-color: #ff69b4; color: white">
+        <h2>Ngày giờ hiện tại: <span id="currentDate"></span></h2>
+      </div>
+
+      <div class="result" style="border-left: 5px solid #ffa500">
+        <h2>Tổng từ 1-100: <span id="sum1to100"></span></h2>
+      </div>
+
+      <div class="result">
+        <h2>Cổng máy chủ: <span id="serverPort">N/A</span></h2>
+      </div>
+
+      <div class="result">
+        <h2>Tên máy chủ: <span id="serverName">N/A</span></h2>
+      </div>
+
+      <!-- Phần giải phương trình bậc nhất -->
+      <div class="result" style="border-left: 5px solid #0000ff">
+        <h2>Giải phương trình bậc nhất: <em>8x + 4 = 0</em></h2>
+        <h3 id="equationSolution"></h3>
+      </div>
+    </div>
+
+    <script>
+      // Các giá trị
+      const a = 8;
+      const b = 4;
+
+      // Tính toán
+      document.getElementById("sum").textContent = a + b;
+      document.getElementById("difference").textContent = a - b;
+      document.getElementById("quotient").textContent = (a / b).toFixed(2);
+      document.getElementById("product").textContent = a * b;
+      document.getElementById("currentDate").textContent =
+        new Date().toLocaleString();
+      document.getElementById("sum1to100").textContent = ((1 + 100) * 100) / 2;
+
+      // Giải phương trình 8x + 4 = 0
+      const equationSolution = () => {
+        if (a !== 0) {
+          const x = -b / a;
+          return `Nghiệm: x = ${x}`;
+        } else {
+          if (b === 0) {
+            return "Phương trình có vô số nghiệm.";
+          } else {
+            return "Phương trình vô nghiệm.";
+          }
+        }
+      };
+
+      document.getElementById("equationSolution").textContent =
+        equationSolution();
+
+      // Các thông tin máy chủ
+      // Vì đây là HTML tĩnh, không thể lấy thông tin máy chủ như cổng và tên máy chủ.
+      // Bạn có thể sử dụng JavaScript để lấy một số thông tin từ trình duyệt nếu cần.
+    </script>
+  </body>
+</html>
